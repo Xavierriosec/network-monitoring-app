@@ -12,12 +12,12 @@ sudo apt update && sudo apt upgrade -y
 
 # Instalar Docker
 
-sudo apt install -y docker.io
 
+```
 sudo systemctl start docker
-
 sudo systemctl enable docker
 
+```
 Pasos para Ejecutar Todo con Docker Compose
 Asegúrate de que Docker y Docker Compose estén instalados en tu sistema. Puedes verificar la instalación de Docker y Docker Compose con estos comandos:
 
