@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: influxdb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: influxdb
+  template:
+    metadata:
+      labels:
+        app: influxdb
+    spec:
+      containers:
+      - name: influxdb
+        image: influxdb:latest
+        ports:
+        - containerPort: 8086
+        volumeMounts:
+        - mountPath: /var/lib/influxdb
+          name: influxdb-storage
+      volumes:
+      - name: influxdb-storage
+        emptyDir: {}  # Para almacenamiento temporal. En producción, reemplaza esto por un almacenamiento persistente (Persistent Volume).
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: influxdb-service
+spec:
+  type: ClusterIP
+  selector:
+    app: influxdb
+  ports:
+  - port: 8086
+    targetPort: 8086
