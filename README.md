@@ -21,9 +21,10 @@ sudo systemctl enable docker
 Pasos para Ejecutar Todo con Docker Compose
 Asegúrate de que Docker y Docker Compose estén instalados en tu sistema. Puedes verificar la instalación de Docker y Docker Compose con estos comandos:
 
-
 docker --version
+
 docker-compose --version
+
 Posiciónate en la carpeta raíz del proyecto. En este caso, asegúrate de estar en la carpeta /network-monitoring-app donde está el archivo docker-compose.yml.
 
 Construye y levanta los servicios con Docker Compose. Ejecuta el siguiente comando para construir las imágenes y levantar los contenedores:
