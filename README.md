@@ -11,15 +11,11 @@ Comienza instalando Docker y configurando Kubernetes (k8s) en tu sistema. Aquí 
 sudo apt update && sudo apt upgrade -y
 
 # Instalar Docker
+
 sudo apt install -y docker.io
+
 sudo systemctl start docker
+
 sudo systemctl enable docker
 
-# Instalar kubeadm, kubelet y kubectl para Kubernetes
-sudo apt install -y apt-transport-https ca-certificates curl
-sudo curl -fsSL https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add -
-sudo bash -c 'cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
-deb https://apt.kubernetes.io/ kubernetes-xenial main
-EOF'
-sudo apt update
-sudo apt install -y kubelet kubeadm kubectl
+
